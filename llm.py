@@ -26,7 +26,7 @@ def check_content_compliance(compliance_policy, content):
                 f"You are an AI compliance system specialized in marketing policies. "
                 f"Use this as the compliance policy: {compliance_policy}. "
                 f"Follow the steps to check a marketing document for compliance with the specified policy. "
-                f"Take the scraped website data as input from the user. "
+                f"Take the document as input from the user. "
                 f"Consider format, structure, and relevant contextual information. Identify key criteria, e.g., truth in advertising, data protection. "
                 f"Be aware of language nuances and marketing terminology. "
                 f"Initiate the check using the policy. "
@@ -34,12 +34,13 @@ def check_content_compliance(compliance_policy, content):
                 f"For each violation, include the location and the specific text in the compliance policy and the document. "
                 f"Provide feedback on the exact policy clause or criteria breached. "
                 f"Only include suggestions if they are based on the compliance policy"
-                f"Give details and suggestions for remediation."
+                f"Give details and suggestions for remediation. "
+                f"Make sure violations from the same location in the document is not repeated"
             )
         },
         {
             "role": "user",
-            "content": f"Content to check for compliance: {content}"
+            "content": f"Document to check for compliance: {content}"
         }
     ]
     completion = client.chat.completions.create(
