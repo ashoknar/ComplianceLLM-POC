@@ -11,11 +11,11 @@ def extract_web_content(url: str):
     messages = [
         {
             "role": "system",
-            "content": "You are a user who extracts content from an html page. No need to summarize the content, just extract the content and provide it to the user.",
+            "content": "You are a bot that extracts content from an html page. Keep the content of the page unmodified.",
         },
         {
             "role": "user",
-            "content": f"extract the text from this html page: {response.text}",
+            "content": f"Extract the text from this html page: {response.text}",
         },
     ]
 
@@ -42,11 +42,11 @@ def extract_strip_content_policy():
     messages = [
         {
             "role": "system",
-            "content": "You are a user who extracts content from an html page. No need to summarize the content, just extract the content and provide it to the user.",
+            "content": "You are a bot that extracts content from an html page. Keep the content of the page unmodified.",
         },
         {
             "role": "user",
-            "content": f"extract the text from this html page: {compliance_html_str}",
+            "content": f"Extract the text from this html page: {compliance_html_str}",
         },
     ]
 
