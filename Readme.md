@@ -1,4 +1,4 @@
-# Complance check LLM
+# Complance Check LLM POC
 
 The task is to build an API that does the following:
 
